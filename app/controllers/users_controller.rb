@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
- 
+  before_action :require_user_logged_in, only: [:create]
+  before_action :correct_user, only: [:destroy]
   def index
   end
 
